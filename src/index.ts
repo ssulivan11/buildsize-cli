@@ -4,7 +4,7 @@ const glob = require('glob');
 const bytes = require('bytes');
 const fs = require('fs');
 const { cosmiconfig } = require('cosmiconfig');
-const { program } = require('commander');
+const program = require('commander');
 const message = require('./message');
 const sizes = require('./sizes');
 
