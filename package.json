@@ -1,6 +1,6 @@
 {
   "name": "buildsize-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "file size check for cli",
   "author": "Scott Sullivan",
   "publishConfig": {
