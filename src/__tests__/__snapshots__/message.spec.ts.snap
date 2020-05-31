@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`message return complete 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "
+
+🚀 mock message
+",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`message return exit 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "
+
+💩 mock message
+",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`message return failure 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "[30m[41m[49m[39m
+[30m[41m failure [49m[39m",
+      "[31mmock message[39m",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`message return success 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "[30m[42m[49m[39m
+[30m[42m success [49m[39m",
+      "[32mmock message[39m",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`message return warning 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "[30m[43m[49m[39m
+[30m[43m warning [49m[39m",
+      "[33mmock message[39m",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
