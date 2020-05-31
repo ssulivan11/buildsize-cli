@@ -35,3 +35,7 @@ module.exports = {
   ]
 };
 ```
+
+### references
+
+started on the idea of the amazing [bundlesize](https://github.com/siddharthkp/bundlesize) project but is based more on config file, no CI and a couple extra features
