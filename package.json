@@ -1,8 +1,9 @@
 {
   "name": "buildsize-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "file size check for cli",
   "author": "Scott Sullivan",
+  "license": "MIT",
   "main": "dist/index.js",
   "bin": {
     "buildsize-cli": "dist/index.js"
