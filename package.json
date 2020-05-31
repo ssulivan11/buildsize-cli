@@ -1,10 +1,11 @@
 {
   "name": "buildsize-cli",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "file size check for cli",
   "author": "Scott Sullivan",
-  "publishConfig": {
-    "registry": "https://github.com/ssulivan11/buildsize-cli"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssulivan11/buildsize-cli.git"
   },
   "license": "MIT",
   "main": "dist/index.js",
