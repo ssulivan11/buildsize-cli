@@ -15,12 +15,12 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --coverage",
-    "run:valid": "node dist/index.js --config __mocks__/valid",
-    "run:invalid": "node dist/index.js --config __mocks__/invalid",
+    "run:valid": "tsc && node dist/index.js --config __mocks__/valid",
+    "run:invalid": "tsc && node dist/index.js --config __mocks__/invalid",
     "lint": "eslint '*/**/*.{js,ts}'",
     "lint:fix": "eslint '*/**/*.{js,ts}' --fix",
     "format": "prettier . --write --ignore-path .gitignore",
-    "prepublish": "yarn build"
+    "prepublish": "tsc"
   },
   "lint-staged": {
     "**/*.{ts,js}": [

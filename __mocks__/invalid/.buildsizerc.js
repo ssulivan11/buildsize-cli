@@ -8,18 +8,18 @@ module.exports = {
       compression: 'gzip'
     },
     {
-      path: '__mocks__/80b.mock.js',
-      maxSize: '1B',
+      path: '__mocks__/200b.mock.js',
+      maxSize: '1B', // will fail for testing
       compression: 'gzip'
     },
     {
-      path: '__mocks__/80b.mock.js',
-      maxSize: '1B',
+      path: '__mocks__/200b.mock.js',
+      maxSize: '1B', // will fail for testing
       warnOnly: true,
       compression: 'gzip'
     },
     {
-      path: '__mocks__/80b.mock.js',
+      path: '__mocks__/200b.mock.js',
       maxSize: '2kB',
       compression: 'gzip'
     }

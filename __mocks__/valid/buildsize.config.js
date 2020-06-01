@@ -12,9 +12,18 @@ module.exports = {
       }
     },
     {
-      path: '__mocks__/5kb.mock.js',
-      maxSize: '6kB',
+      path: '__mocks__/200b.mock.js',
+      maxSize: '200B'
+    },
+    {
+      path: '__mocks__/200b.mock.js',
+      maxSize: '85B',
       compression: 'gzip'
+    },
+    {
+      path: '__mocks__/200b.mock.js',
+      maxSize: '77B',
+      compression: 'brotli'
     }
   ]
 };

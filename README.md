@@ -6,8 +6,8 @@ define all file sizes here and the last time it was changed
 
 ### supported naming
 
-- .buildsizes.js
-- buildsizes.config.js
+- .buildsize.js
+- buildsize.config.js
 
 ### flag for path
 

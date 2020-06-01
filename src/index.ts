@@ -20,7 +20,7 @@ type groupFilesType = fileType[];
 
 program.option('-c, --config <config>', 'path containing file size config setup').parse(process.argv);
 
-const explorer = cosmiconfig('buildsizes', ['.buildsizes.json', '.buildsizes.js', 'buildsizes.config.js']);
+const explorer = cosmiconfig('buildsize', ['.buildsizerc.js', 'buildsize.config.js']);
 
 const configPath = program?.config;
 
@@ -39,7 +39,8 @@ module.exports = explorer
         const { maxSize, minSize, compression, externals } = file;
         const maxFileSize = bytes(maxSize) || Infinity;
         const minFileSize = bytes(minSize) || 0;
-        const size = sizes(fs.readFileSync(path, 'utf8'), compression);
+        const compressionType = compression || 'raw';
+        const size = sizes(fs.readFileSync(path, 'utf8'), compressionType);
 
         // externals subtract from total size
         let externalsTotalSize = 0;
@@ -51,7 +52,7 @@ module.exports = explorer
         const externalSize = externalsTotalSize > 0 && bytes(size - externalsTotalSize);
 
         // messages for build size checks
-        const maxSizeMsg = `${bytes(maxFileSize)} (${compression}d)`;
+        const maxSizeMsg = `${bytes(maxFileSize)} (${compressionType})`;
         const sizeMsg = `${externalSize || bytes(size)}`;
 
         let minSizeText = '';

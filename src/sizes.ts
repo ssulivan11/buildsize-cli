@@ -1,2 +1,4 @@
-module.exports = (data: string, compression?: 'gzip' | 'brotli') =>
-  compression ? require(`${compression}-size`).sync(data) : Buffer.byteLength(data); // eslint-disable-line
+module.exports = (data: string, compression?: 'gzip' | 'brotli' | 'raw') =>
+  compression === 'gzip' || compression === 'brotli'
+    ? require(`${compression}-size`).sync(data) // eslint-disable-line
+    : Buffer.byteLength(data);
