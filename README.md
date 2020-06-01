@@ -1,4 +1,4 @@
-# buildsize-cli
+# buildsize-cli 🏗️
 
 define file sizes, error message and the last time it was changed
 
