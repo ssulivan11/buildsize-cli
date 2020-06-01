@@ -18,6 +18,7 @@ buildsize-cli --config folder/path
 ```js
 module.exports = {
   lastUpdated: 'Fri May 29 2020 12:00:00 GMT-0500 (Central Daylight Time)', // optional timestamp
+  failMessage: 'Please fix, split, or set to warn.', // optional message to display on failed check
   files: [
     {
       path: '__mocks__/5kb.mock.js', // mandatory file path
