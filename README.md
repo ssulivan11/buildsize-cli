@@ -1,12 +1,10 @@
 # buildsize-cli
 
-## configuration file
-
-define all file sizes here and the last time it was changed
+define file sizes, error message and the last time it was changed
 
 ### supported naming
 
-- .buildsize.js
+- .buildsizerc.js
 - buildsize.config.js
 
 ### flag for path
