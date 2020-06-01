@@ -4,3 +4,4 @@ dist
 coverage
 reports
 package-lock.json
+.DS_STORE
