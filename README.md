@@ -19,7 +19,7 @@ buildsize-cli --config folder/path
 
 ```js
 module.exports = {
-  lastUpdated: 'Fri May 29 2020 12:00:00 GMT-0500 (Central Daylight Time)', // optional timestamp
+  lastUpdate: 'Fri May 29 2020 12:00:00 GMT-0500 (Central Daylight Time)', // optional timestamp
   files: [
     {
       path: '__mocks__/5kb.mock.js', // mandatory file path
