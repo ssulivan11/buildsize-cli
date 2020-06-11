@@ -7,6 +7,7 @@ const { cosmiconfig } = require('cosmiconfig');
 const program = require('commander');
 const message = require('./message');
 const sizes = require('./sizes');
+const diffPercentage = require('./diffPercentage');
 
 type fileType = {
   path: string;
@@ -14,6 +15,7 @@ type fileType = {
   minSize?: number;
   compression?: string;
   warnOnly?: boolean;
+  lastSize?: boolean;
   externals?: { [key: string]: string };
 };
 type groupFilesType = fileType[];
@@ -26,7 +28,7 @@ const configPath = program?.config;
 
 module.exports = explorer
   .search(configPath)
-  .then((result: { config: { failMessage: string; files: groupFilesType } }) => {
+  .then((result: { config: { failMessage: string; files: groupFilesType; lastUpdate?: string } }) => {
     const { config } = result;
     const { files, failMessage } = config;
     const hasError = [];
@@ -36,7 +38,7 @@ module.exports = explorer
         return message('exit', `Sorry, there is no matching file for ${file.path} in ${process.cwd()}`);
       }
       return paths.map((path: string) => {
-        const { maxSize, minSize, compression, externals } = file;
+        const { maxSize, minSize, compression, externals, lastSize = false } = file;
         const maxFileSize = bytes(maxSize) || Infinity;
         const minFileSize = bytes(minSize) || 0;
         const compressionType = compression || 'raw';
@@ -50,25 +52,32 @@ module.exports = explorer
           });
         }
         const externalSize = externalsTotalSize > 0 && bytes(size - externalsTotalSize);
+        const finalSize = size - externalsTotalSize;
 
-        // messages for build size checks
+        // messages for build finalSize checks
         const maxSizeMsg = `${bytes(maxFileSize)} (${compressionType})`;
-        const sizeMsg = `${externalSize || bytes(size)}`;
+        const sizeMsg = `${externalSize || bytes(finalSize)}`;
 
+        // minimum size check text
         let minSizeText = '';
         if (minFileSize > 0) minSizeText = `minSize ${bytes(minFileSize)} < `;
 
-        const basicMsg = `${path}\n          ${minSizeText || ''}${sizeMsg} < maxSize ${maxSizeMsg}`;
+        const basicMsg = {
+          message: path,
+          info: `\n  · ${minSizeText || ''}${sizeMsg} < maxSize ${maxSizeMsg}${
+            lastSize ? diffPercentage(maxFileSize, finalSize) : ''
+          }`
+        };
 
         // validate build sizes
-        const invalidMaxSize = size - externalsTotalSize > maxFileSize;
-        const invalidMinSize = size - externalsTotalSize < minFileSize;
+        const invalidMaxSize = finalSize > maxFileSize;
+        const invalidMinSize = finalSize < minFileSize;
         if (invalidMaxSize || invalidMinSize) {
-          if (file.warnOnly) return message('warning', basicMsg);
+          if (file.warnOnly) return message('warning', basicMsg.message, basicMsg.info);
           hasError.push('');
-          return message('failure', basicMsg);
+          return message('failure', basicMsg.message, basicMsg.info);
         }
-        return message('success', basicMsg);
+        return message('success', basicMsg.message, basicMsg.info);
       });
     });
     if (hasError.length) {
@@ -77,9 +86,10 @@ module.exports = explorer
         `Build size check has failed in ${hasError.length} file${hasError.length > 1 ? 's' : ''}\n${failMessage || ''}`
       );
     } else {
-      message('complete', `Build size check have passed, please continue on.`);
+      message('complete', `Build size checks have passed, please continue on.`);
     }
   })
-  .catch(() => {
-    return message('exit', `Sorry, cannot find config file in ${configPath || 'root'} path\n`);
+  .catch((error: any) => {
+    console.warn(error);
+    return message('exit', `Sorry, cannot find a valid config file in ${configPath || 'root'} path\n`);
   });

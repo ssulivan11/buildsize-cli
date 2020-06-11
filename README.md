@@ -21,11 +21,12 @@ module.exports = {
   failMessage: 'Please fix, split, or set to warn.', // optional message to display on failed check
   files: [
     {
-      path: '__mocks__/5kb.mock.js', // mandatory file path
+      path: '__mocks__/5kb.mock.js', // build file path to check against
       maxSize: '6kB', // optional max file size validation
       minSize: '1kB', // optional min file size validation
       compression: 'gzip', // optional compression type, gzip | brotli
       warnOnly: true, // optional choice to not fail the check
+      lastSize: true, // optionally display percentage difference of current size and last set max size
       externals: {
         // optional sizes are added and removed from maxSize for readabliity
         'package-one': '1kB'
@@ -34,6 +35,14 @@ module.exports = {
   ]
 };
 ```
+
+#### valid example
+
+![](https://i.imgur.com/OhYdEHc.png)
+
+#### invalid example
+
+![](https://i.imgur.com/qn9c8Lq.png)
 
 ### references
 
