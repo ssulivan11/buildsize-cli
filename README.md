@@ -1,12 +1,10 @@
-# buildsize-cli
+# buildsize-cli 🏗️
 
-## configuration file
-
-define all file sizes here and the last time it was changed
+define file sizes, error message and the last time it was changed
 
 ### supported naming
 
-- .buildsize.js
+- .buildsizerc.js
 - buildsize.config.js
 
 ### flag for path
@@ -19,7 +17,8 @@ buildsize-cli --config folder/path
 
 ```js
 module.exports = {
-  lastUpdate: 'Fri May 29 2020 12:00:00 GMT-0500 (Central Daylight Time)', // optional timestamp
+  lastUpdated: 'Fri May 29 2020 12:00:00 GMT-0500 (Central Daylight Time)', // optional timestamp
+  failMessage: 'Please fix, split, or set to warn.', // optional message to display on failed check
   files: [
     {
       path: '__mocks__/5kb.mock.js', // build file path to check against
