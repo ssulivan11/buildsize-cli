@@ -1,0 +1,27 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "script"
+  },
+  "extends": ["airbnb-typescript/base", "prettier/@typescript-eslint", "plugin:prettier/recommended"],
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/camelcase": "off",
+    "no-console": "off"
+  },
+  "ignorePatterns": ["dist", "node_modules", "*.spec.js"],
+  "overrides": [
+    {
+      "parserOptions": {
+        "project": null,
+        "ecmaVersion": 6,
+        "sourceType": "module"
+      },
+      "files": ["*.js"],
+      "extends": ["eslint:recommended"]
+    }
+  ]
+}
