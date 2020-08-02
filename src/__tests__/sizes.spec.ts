@@ -3,7 +3,7 @@ const fs = require('fs');
 const sizes = require('../sizes');
 
 describe('size compression', () => {
-  const mock5kbFileSize = '__mocks__/5kb.gzip.mock.js';
+  const mock5kbFileSize = '__mocks__/5kb.gzip.mock';
   test('should return valid gzip size', () => {
     const size = sizes(fs.readFileSync(mock5kbFileSize, 'utf8'), 'gzip');
     expect(size).toBe(5125);
