@@ -1,4 +1,3 @@
-export {};
 const message = require('../message');
 
 jest.mock('shelljs', () => ({
@@ -36,3 +35,5 @@ describe('message return', () => {
     expect(console.log).toMatchSnapshot();
   });
 });
+
+export {};
