@@ -1,4 +1,3 @@
-export {};
 const fs = require('fs');
 const sizes = require('../sizes');
 
@@ -19,3 +18,5 @@ describe('size compression', () => {
     expect(size).toBe(1129773);
   });
 });
+
+export {};
