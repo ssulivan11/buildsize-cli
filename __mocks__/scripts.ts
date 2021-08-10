@@ -3,7 +3,7 @@ const emojiMsg = require('node-emoji');
 const chalkMsg = require('chalk');
 
 const buildTypeArg = process?.argv[3];
-const buildType = `node dist/index.js --config __mocks__/${buildTypeArg}`;
+const buildType = `node dist/src/index.js --config __mocks__/${buildTypeArg}`;
 
 shell.exec(buildType, { silent: true }, (code: Number, stdout: string) => {
   if (buildTypeArg === 'valid') {
