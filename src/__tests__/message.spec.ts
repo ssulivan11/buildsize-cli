@@ -8,6 +8,7 @@ describe('message return', () => {
   test('success', () => {
     console.log = jest.fn();
     message('success', 'mock message');
+    console.warn(console.log);
     expect(console.log).toMatchSnapshot();
   });
 
