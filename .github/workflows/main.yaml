@@ -19,9 +19,9 @@ jobs:
       - name: Format
         run: npm run format:check
       - name: Check Valid Scripts
-        run: check:valid
+        run: npm run check:valid
       - name: Check Invalid Scripts
-        run: check:invalid
+        run: npm run check:invalid
   build:
     runs-on: ubuntu-latest
     steps:
