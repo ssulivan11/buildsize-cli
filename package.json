@@ -1,6 +1,6 @@
 {
   "name": "buildsize-cli",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "file size check for cli",
   "author": "Scott Sullivan",
   "repository": {
@@ -21,6 +21,7 @@
     "lint": "eslint '*/**/*.{js,ts}'",
     "lint:fix": "eslint '*/**/*.{js,ts}' --fix",
     "format": "prettier . --write --ignore-path .gitignore",
+    "format:check": "prettier . --write --ignore-path .gitignore",
     "prepublish": "tsc"
   },
   "lint-staged": {
@@ -33,7 +34,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run test"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test:unit"
     }
   },
   "dependencies": {
