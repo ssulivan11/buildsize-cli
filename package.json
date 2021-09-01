@@ -21,6 +21,7 @@
     "lint": "eslint '*/**/*.{js,ts}'",
     "lint:fix": "eslint '*/**/*.{js,ts}' --fix",
     "format": "prettier . --write --ignore-path .gitignore",
+    "format:check": "prettier . --write --ignore-path .gitignore",
     "prepublish": "tsc"
   },
   "lint-staged": {
