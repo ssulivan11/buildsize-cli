@@ -38,11 +38,11 @@ module.exports = explorer
       files.map((file: fileType) => {
         const paths = glob.sync(file.path);
         if (!paths.length) {
-          return message(
-            failOnMissingBundles ? 'failure' : 'warning',
-            `There is no matching file for ${file.path} in ${process.cwd()}`,
-            failOnMissingBundles && ''
-          );
+          if (failOnMissingBundles) {
+            hasError.push('');
+            return message('failure', `There is no matching file for ${file.path} in ${process.cwd()}`, '');
+          }
+          return message('warning', `There is no matching file for ${file.path} in ${process.cwd()}`);
         }
         return paths.map((path: string) => {
           const { maxSize, minSize, compression, externals, lastSize = false } = file;
