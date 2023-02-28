@@ -33,6 +33,12 @@ module.exports = {
       maxSize: '100B',
       compression: 'brotli',
       lastSize: true // no message since equal
+    },
+    {
+      path: '__mocks__/missing_file_test.ts',
+      maxSize: '1B',
+      compression: 'brotli',
+      lastSize: true
     }
   ]
 };

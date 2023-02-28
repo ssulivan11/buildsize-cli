@@ -2,23 +2,24 @@
 
 define file sizes, error message and the last time it was changed
 
-### supported naming
+## supported naming
 
 - .buildsizerc.js
 - buildsize.config.js
 
-### flag for path
+## flag for path
 
 ```shell
 buildsize-cli --config folder/path
 ```
 
-### usage
+## usage
 
 ```js
 module.exports = {
   lastUpdated: 'Fri May 29 2020 12:00:00 GMT-0500 (Central Daylight Time)', // optional timestamp
   failMessage: 'Please fix, split, or set to warn.', // optional message to display on failed check
+  failOnMissingBundles: true, // optional boolean to decalre if job should fail if any files are missing
   files: [
     {
       path: '__mocks__/5kb.mock.js', // build file path to check against
@@ -36,14 +37,14 @@ module.exports = {
 };
 ```
 
-#### valid example
+### valid example
 
 ![](https://i.imgur.com/OhYdEHc.png)
 
-#### invalid example
+### invalid example
 
 ![](https://i.imgur.com/qn9c8Lq.png)
 
 ### references
 
-started on the idea of the amazing [bundlesize](https://github.com/siddharthkp/bundlesize) project but is based more on config file, no CI and a couple extra features
+this all started on the basis of the amazing [bundlesize](https://github.com/siddharthkp/bundlesize) project but is centered around unique customizations
