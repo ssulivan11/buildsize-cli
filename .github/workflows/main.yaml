@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install modules
-        run: npm install
+        run: npm install --save --legacy-peer-deps
       - name: Lint
         run: npm run lint
       - name: Format
@@ -27,6 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install modules
-        run: npm install
+        run: npm install --save --legacy-peer-deps
       - name: Build
         run: npm run build
