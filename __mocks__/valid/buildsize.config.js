@@ -20,25 +20,27 @@ module.exports = {
     },
     {
       path: '__mocks__/100b.gzip.mock.ts',
-      maxSize: '100B',
+      maxSize: '105B',
       compression: 'gzip'
     },
     {
       path: '__mocks__/100b.raw.mock.ts',
-      maxSize: '100B',
+      maxSize: '105B',
       compression: 'raw'
     },
     {
       path: '__mocks__/100b.brotli.mock.ts',
       maxSize: '100B',
       compression: 'brotli',
+      warnOnly: true,
       lastSize: true // no message since equal
     },
     {
       path: '__mocks__/missing_file_test.ts',
       maxSize: '1B',
       compression: 'brotli',
-      lastSize: true
+      lastSize: true,
+      warnOnly: true
     }
   ]
 };
