@@ -11,7 +11,9 @@ jobs:
   integrity:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
       - name: Install modules
         run: npm install --save --legacy-peer-deps
       - name: Lint
@@ -25,7 +27,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
       - name: Install modules
         run: npm install --save --legacy-peer-deps
       - name: Build
