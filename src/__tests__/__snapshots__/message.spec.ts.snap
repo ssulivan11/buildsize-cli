@@ -42,8 +42,8 @@ exports[`message return failure 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      "[101m[30m[30m
- failure [0m[0m[0m",
+      "
+🔴 [31mfailure [0m",
       "[31mmock message[0m",
       undefined,
     ],
@@ -61,8 +61,8 @@ exports[`message return success 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      "[102m[30m[30m
- success [0m[0m[0m",
+      "
+🟢 [32msuccess [0m",
       "[32mmock message[0m",
       undefined,
     ],
@@ -80,8 +80,8 @@ exports[`message return warning 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      "[103m[30m[30m
- warning [0m[0m[0m",
+      "
+🟡 [33mwarning [0m",
       "[33mmock message[0m",
       undefined,
     ],

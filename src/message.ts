@@ -8,8 +8,17 @@ module.exports = (type: string, message: string, info: string) => {
     return shelljs.exit(1);
   }
   if (type === 'complete') return console.log(`\n\n${emoji.get('rocket')} ${message}\n`);
-  if (type === 'failure') return console.log(colorsCli.black.red_bbt('\n failure '), colorsCli.red(message), info);
+  if (type === 'failure')
+    return console.log(`\n${emoji.get('red_circle')} ${colorsCli.red('failure ')}`, colorsCli.red(message), info);
   if (type === 'warning')
-    return console.log(colorsCli.black.yellow_bbt('\n warning '), colorsCli.yellow(message), info);
-  return console.log(colorsCli.black.green_bbt('\n success '), colorsCli.green(message), info);
+    return console.log(
+      `\n${emoji.get('large_yellow_circle')} ${colorsCli.yellow('warning ')}`,
+      colorsCli.yellow(message),
+      info
+    );
+  return console.log(
+    `\n${emoji.get('large_green_circle')} ${colorsCli.green('success ')}`,
+    colorsCli.green(message),
+    info
+  );
 };

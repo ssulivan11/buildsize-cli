@@ -46,7 +46,7 @@
     "commander": "^5.1.0",
     "cosmiconfig": "^6.0.0",
     "gzip-size": "^5.1.1",
-    "node-emoji": "^1.10.0",
+    "node-emoji": "^1.11.0",
     "prettier": "^2.0.5"
   },
   "devDependencies": {
