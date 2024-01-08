@@ -69,8 +69,6 @@ module.exports = explorer
           let minSizeText = '';
           if (minFileSize > 0) minSizeText = `minSize ${bytes(minFileSize)} < `;
 
-          console.warn(minSizeText);
-
           const basicMsg = {
             message: path,
             info: `\n  · ${minSizeText || ''}${sizeMsg} < maxSize ${maxSizeMsg}${
