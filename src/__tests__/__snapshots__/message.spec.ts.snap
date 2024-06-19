@@ -2,16 +2,16 @@
 
 exports[`message return complete 1`] = `
 [MockFunction] {
-  "calls": Array [
-    Array [
+  "calls": [
+    [
       "
 
 🚀 mock message
 ",
     ],
   ],
-  "results": Array [
-    Object {
+  "results": [
+    {
       "type": "return",
       "value": undefined,
     },
@@ -21,16 +21,16 @@ exports[`message return complete 1`] = `
 
 exports[`message return exit 1`] = `
 [MockFunction] {
-  "calls": Array [
-    Array [
+  "calls": [
+    [
       "
 
 💩 mock message
 ",
     ],
   ],
-  "results": Array [
-    Object {
+  "results": [
+    {
       "type": "return",
       "value": undefined,
     },
@@ -40,16 +40,16 @@ exports[`message return exit 1`] = `
 
 exports[`message return failure 1`] = `
 [MockFunction] {
-  "calls": Array [
-    Array [
+  "calls": [
+    [
       "
 🔴 [31mfailure [0m",
       "[31mmock message[0m",
       undefined,
     ],
   ],
-  "results": Array [
-    Object {
+  "results": [
+    {
       "type": "return",
       "value": undefined,
     },
@@ -59,16 +59,16 @@ exports[`message return failure 1`] = `
 
 exports[`message return success 1`] = `
 [MockFunction] {
-  "calls": Array [
-    Array [
+  "calls": [
+    [
       "
 🟢 [32msuccess [0m",
       "[32mmock message[0m",
       undefined,
     ],
   ],
-  "results": Array [
-    Object {
+  "results": [
+    {
       "type": "return",
       "value": undefined,
     },
@@ -78,16 +78,16 @@ exports[`message return success 1`] = `
 
 exports[`message return warning 1`] = `
 [MockFunction] {
-  "calls": Array [
-    Array [
+  "calls": [
+    [
       "
 🟡 [33mwarning [0m",
       "[33mmock message[0m",
       undefined,
     ],
   ],
-  "results": Array [
-    Object {
+  "results": [
+    {
       "type": "return",
       "value": undefined,
     },
